@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Chart Example</title>
+</head>
+<body>
+  <!-- Canvas to draw the bar chart -->
+  <canvas id="myChart" width="400" height="300"></canvas>
+
+  <script>
+    // Function to draw a bar chart
+    function drawBarChart(data) {
+      var canvas = document.getElementById("myChart");
+      var ctx = canvas.getContext("2d");
+
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      var barWidth = 30;
+      var spacing = 10;
+      var startX = 20;
+      var maxValue = Math.max(...data);
+
+      // Draw bars
+      for (var i = 0; i < data.length; i++) {
+        var barHeight = (data[i] / maxValue) * (canvas.height - 30);
+        var x = startX + (barWidth + spacing) * i;
+        var y = canvas.height - barHeight;
+
+        ctx.fillStyle = "blue";
+        ctx.fillRect(x, y, barWidth, barHeight);
+
+        // Display data value above each bar
+        ctx.fillStyle = "black";
+        ctx.fillText(data[i], x + barWidth / 2, y - 5);
+      }
+    }
+
+    // Example data for the bar chart
+    var chartData = [30, 70, 50, 120, 90];
+
+    // Call the drawBarChart function with the data
+    drawBarChart(chartData);
+  </script>
+</body>
+</html>

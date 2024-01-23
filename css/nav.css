@@ -1,0 +1,35 @@
+/* Reset some default styles for list items and anchor tags */
+body, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Style for the navigation bar */
+nav {
+  background-color: #333; /* Background color */
+  padding: 10px; /* Add some padding for better appearance */
+}
+
+/* Style for the navigation list */
+nav ul {
+  display: flex; /* Display list items horizontally */
+}
+
+/* Style for the navigation list items */
+nav li {
+  margin-right: 20px; /* Add spacing between list items */
+}
+
+/* Style for the navigation links */
+nav a {
+  color: white; /* Text color */
+  font-weight: bold; /* Bold text */
+  font-size: 16px; /* Font size */
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+  color: #ffd700; /* Change text color on hover */
+}

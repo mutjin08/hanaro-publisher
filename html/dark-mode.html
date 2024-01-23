@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Example</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* 다크 모드 토글 클래스 */
+        .dark-mode {
+            background-color: #1a202c;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark-mode-transition">
+
+    <div class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold mb-4">Tailwind Dark Mode Example</h1>
+
+        <button id="toggleDarkMode" class="bg-gray-800 text-white px-4 py-2 rounded-md">Toggle Dark Mode</button>
+
+        <div class="mt-8 p-6 bg-white dark-mode">
+            <p class="text-gray-800">This is some content in the light mode.</p>
+            <p class="text-gray-300">This is some content in the dark mode.</p>
+        </div>
+    </div>
+
+    <script>
+        // 다크 모드 토글 버튼 클릭 이벤트
+        document.getElementById('toggleDarkMode').addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+
+</body>
+</html>

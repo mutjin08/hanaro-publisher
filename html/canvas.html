@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas Example</title>
+</head>
+<body>
+  <!-- Canvas의 크기를 width와 height 속성으로 지정합니다. -->
+  <canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+</html>
+
+<script>
+  // getContext() 메서드는 2d 그래픽 컨텍스트를 반환합니다.
+  var ctx = document.getElementById("mycanvas").getContext('2d');
+
+  // fillStyle 속성을 사용하여 색상을 설정합니다.
+  ctx.fillStyle = 'red';
+
+  // fillRect() 메서드를 사용하여 사각형을 그립니다.
+  ctx.fillRect(0, 0, 200, 200);
+</script>

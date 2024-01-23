@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .flex-container {
+      display: flex;
+      justify-content: space-between; /* 아이템 사이의 간격을 균등하게 배치 */
+      align-items: center; /* 아이템을 수직으로 가운데 정렬 */
+      height: 150px;
+      background-color: #eee;
+    }
+
+    .flex-item {
+      flex: 1; /* 모든 아이템을 동일한 비율로 확장 */
+      padding: 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="flex-container">
+  <div class="flex-item">Item 1</div>
+  <div class="flex-item">Item 2</div>
+  <div class="flex-item">Item 3</div>
+</div>
+
+</body>
+</html>
