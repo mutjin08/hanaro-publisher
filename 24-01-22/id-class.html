@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Classes and ID Example</title>
+    <style>
+        /* 클래스 선택자에 대한 스타일 정의 */
+        .header {
+            font-size: 24px;
+            color: blue;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        /* 아이디 선택자에 대한 스타일 정의 */
+        #unique-element {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- 여러 클래스와 하나의 아이디를 적용한 예시 -->
+    <div class="header highlight" id="unique-element">
+        This element has multiple classes and an ID.
+    </div>
+
+    <!-- 다른 요소에도 클래스를 적용할 수 있음 -->
+    <p class="highlight">
+        This paragraph has the 'highlight' class.
+    </p>
+</body>
+</html>
