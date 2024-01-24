@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>반~~복~~반~~복~~반~~복~~</h1>
+</body>
+</html>
+
+<script>
+  // for
+  let result = 0;
+  let i;
+
+  for(i = 1; i < 10; i++){
+    result += i;
+  }
+  
+  console.log(result);
+
+  // while
+  result = 0;
+  i = 1;
+  while(i<10){
+    result += i;
+    i += 1;
+  }
+  console.log(result);
+
+  //배열
+  let dochis = ["고순이", "고돌이", "또치", "가시", "고동이", "바늘이"];
+  console.log(dochis[3]);
+
+  //for문으로 배열 출력1
+  for(i = 0; i < dochis.length; i++){
+    console.log(i, dochis[i]);
+  }
+
+  //for문으로 배열 출력2 : in
+  for(i in dochis){
+    console.log(i, dochis[i]);
+  }
+
+  //for문으로 배열 출력3 : of
+  for(dochi of dochis){
+    console.log(dochi);
+  }
+
+  //배열의 요소 하나마다 함수를 출력해준다 : forEach함수
+  //함수는 개발자가 만들지만, 호출자는 시스템이다
+  //forEach구문에 전달해야 할 함수
+  //두 개의 매개변수 배열의 요소, 인덱스가 있어야 하고, 반환값은 없는 함수를 전달해줘야 한다
+  //함수형 언어들의 기본문법 : 자바 - 람다&스트림, 파이썬 - 람다, 코틀린, Go()
+
+  dochis.forEach((item, index))
+</script>
