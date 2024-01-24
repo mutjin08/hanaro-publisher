@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  dochis = ["고순", "고돌", "바늘", "고순이", "고돌이", "바늘이","또치"];
+
+  //case1
+  console.log("글자수가~~~두개인~~~고슴도치 이름은?????");
+  let results = [];
+
+  for(i=0;i<dochis.length;i++){
+    if(dochis[i].length==2){
+      results.push(dochis[i]);
+    }
+  }
+  console.log(results);
+
+  //case2
+  results = dochis.filter(item => item.length==2);
+  console.log(results);
+</script>

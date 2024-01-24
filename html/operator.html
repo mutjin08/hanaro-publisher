@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  function showMsg(msg){
+    msg = msg||"빈문자열이지롱~";
+    console.log("msg = ", msg);
+  }
+
+  showMsg();
+  showMsg("안녕하쎄용~~~");
+
+  function getCount(count){
+    count = count??"카운트 불가능이지롱~";
+    return count;
+  }
+  console.log(getCount(5));
+  console.log(getCount(null));
+  console.log(getCount());
+  console.log(getCount(""));
+</script>

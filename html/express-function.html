@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  //함수
+  //항상 메모리를 차지하고 있다
+  //메모리 운영차원에서 볼 때 유연성이 떨어진다
+
+  function sigma(limit = 10){
+    sum = 0;
+    for(i=1;i<limit;i++){
+      sum += i;
+    }
+    return sum;
+  }
+
+  //함수표현식
+  //함수의 이름이 없다
+  //함수 호출 시점에 만들어진다
+  //변수에 함수를 저장해두고 사용해야 한다(포인터형 변수에 함수의 메모리 주소값이 저장된다)
+  //보통은 이벤트 핸들러 사용 시 많이 사용된다
+  let myfunction = function(limit = 10){
+    sum = 0;
+    for(i=1;i<limit;i++){
+      sum += i;
+    }
+    return sum;
+  }
+
+  //화살표함수
+  let arrow = (limit=10) => {
+    sum = 0;
+    for(i=1;i<limit;i++){
+      sum += i;
+    }
+    return sum;
+  }
+
+  console.log(sigma());
+  console.log(myfunction());
+  console.log(arrow())
+</script>

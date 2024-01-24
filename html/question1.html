@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<!--
+    question 1 : 
+    let numbers = [10,2,3,6,8,9,21,20,4,25,33];
+    위 배열에서 각각 짝수와 홀수를 추출해보세요 (filter 사용하기)
+
+    question 2 : 
+    let words = ['school', 'hospital', 'desk', 'chair', 'language',
+                 'house', 'programming', 'survey', 'assembly', 'compiler',
+                 'interpreter' ];
+    위 배열에서 문자열의 개수가 5개 이상인것만 추출하기
+    위 배열에서 단어가  h로 시작하는 것만 추출하기
+    위 배열에서 단어가  r을 포함하는 것만 추출하기
+-->
+
+<script>
+  let numbers = [10,2,3,6,8,9,21,20,4,25,33];
+
+  //짝수
+  const even_numbers = numbers.filter(item => item%2===0);
+  console.log(even_numbers);
+
+  //홀수
+  const odd_numbers = numbers.filter(item => item%2!=0);
+  console.log(odd_numbers);
+</script>

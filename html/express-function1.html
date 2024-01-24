@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  let dochis = ["고순이", "고돌이", "가시", "바늘이"];
+
+  //case1
+  function showItem(item){
+    console.log(item);
+  }
+
+  dochis.forEach(showItem);
+
+  //case2
+  dochis.forEach(function(item){
+    console.log(item);
+  });
+
+  //case3
+  dochis.forEach((item) => console.log(item))
+</script>
