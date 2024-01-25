@@ -22,4 +22,38 @@
 
   console.log(persons[0].name);
   console.log(persons[0]["name"]);
+
+  //값 바꾸기
+  persons[0].name = "새도치"
+  for(i=0;i<persons.length;i++){
+    console.log(persons[i].name, persons[i].age);
+  }
+
+  //in
+  for(i in persons){
+    console.log(i, persons[i].name, persons[i].age);
+  }
+
+  //of
+  for(ob of persons){
+    console.log(ob.name, ob.age);
+  }
+
+  //forEach
+  persons.forEach(item => console.log("forEach", item.name, item.age))
+
+  //이름으로 검색을 하고 싶다
+  //강조의 나이를 읽고 싶다
+  let name = "강비늘";
+  let search = persons.find(item => {
+    console.log(typeof item);
+    return item.name == name;
+  })
+
+  if(search==undefined){
+    console.log(`${name}은 없습니다~~~`)
+  }
+  else{
+    console.log(search.name, search.age);
+  }
 </script>

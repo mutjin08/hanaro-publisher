@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자열 정렬</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+
+    #inputField {
+      padding: 5px;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>문자열 정렬</h2>
+
+  <label for="inputField">`,`로 연결된 문자열 입력:</label>
+  <input type="text" id="inputField">
+  <button id="sortButton">정렬</button>
+
+  <div id="result"></div>
+
+  <script>
+    // 정렬 함수
+    function sortString() {
+      var inputText = document.getElementById('inputField').value;
+      var inputArray = inputText.split(',');
+      var sortedArray = inputArray.sort();
+      var sortedString = sortedArray.join(', ');
+      return sortedString;
+    }
+
+    // 결과 출력 함수
+    function displayResult() {
+      var resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '<strong>정렬된 문자열:</strong> ' + sortString();
+    }
+
+    // 버튼 클릭 시 이벤트 핸들러 등록
+    document.getElementById('sortButton').addEventListener('click', displayResult);
+  </script>
+
+</body>
+</html>

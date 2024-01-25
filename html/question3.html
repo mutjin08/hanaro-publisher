@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<!--
+총점순으로 정렬하여 출력하기(원본데이터는 그대로)
+이름에 "정"자가 들어가는 사람만 내림차순 정렬하여 출력하기
+["홍정훈", "김정하", "이민호"] 세명 정보만 추출하기
+-->
+
+<script>
+  let scores = [
+      {"id":1, "name":"김성훈", "kor":90, "eng":80, "mat":60},
+      {"id":2, "name":"이민호", "kor":100, "eng":100, "mat":95},
+      {"id":3, "name":"김경하", "kor":80, "eng":80, "mat":60},
+      {"id":4, "name":"전미화", "kor":70, "eng":90, "mat":60},
+      {"id":5, "name":"김정하", "kor":80, "eng":70, "mat":80},
+      {"id":6, "name":"강수지", "kor":60, "eng":50, "mat":30},
+      {"id":7, "name":"한승원", "kor":50, "eng":50, "mat":40},
+      {"id":8, "name":"홍정훈", "kor":90, "eng":70, "mat":60},
+      {"id":9, "name":"백운용", "kor":95, "eng":80, "mat":70},
+      {"id":10, "name":"최주용", "kor":90, "eng":90, "mat":90},
+  ];
+
+  //총점순으로 정렬하여 출력하기(원본데이터는 그대로) - 내림차순
+  result1 = scores.toSorted((a, b) => (b.kor + b.eng + b.mat) - (a.kor + a.eng + a.mat));
+  console.log(result1);
+  console.log(scores);
+
+  //이름에 "정"자가 들어가는 사람만 내림차순 정렬하여 출력하기
+  result2 = scores.filter(student => student.name.includes("정"));
+  result2 = result2.toSorted((a, b) => (b.kor + b.eng + b.mat) - (a.kor + a.eng + a.mat));
+  console.log(result2);
+
+  //["홍정훈", "김정하", "이민호"] 세명 정보만 추출하기
+  //filter, find류 함수를 사용해서 찾을 수 있다
+  //sol 6-1
+  let selectedNames = ["홍정훈", "김정하", "이민호"];
+  result3 = scores.filter(student => selectedNames.includes(student.name));
+  console.log(result3);
+
+  //sol 6-2
+  scores.filter(student => {
+    return selectedNames.find(name => name = student.name)!=undefined;
+  })
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>당신의 주급을 계산해 드립니다</h1>
+
+  <label for="nameid">이름</label>
+  <input id="nameid" type="text"/>
+  <br/>
+
+  <label for="moneyid">시간당 급여액</label>
+  <input id="moneyid" type="number"/>
+  <br/>
+
+  <label for="timeid">근무시간</label>
+  <input id="timeid" type="number"/>
+  <br/>
+
+  <button id="buttonid" type="button">계산하기!!!</button>
+  
+  <div id="result"></div>
+
+  <script>
+    document.getElementById("buttonid").addEventListener("click", displayResult);
+
+    function calcPay() {
+      let usermoney = parseFloat(document.getElementById("moneyid").value);
+      let usertime = parseFloat(document.getElementById("timeid").value);
+      let total = usermoney * usertime;
+      return total;
+    }
+
+    function displayResult() {
+      let username = document.getElementById("nameid").value;
+      let resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = username + "의 주급은 " + calcPay();
+    }
+  </script>
+</body>
+</html>

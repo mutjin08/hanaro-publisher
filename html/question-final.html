@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>~~~숫자를 무료로 정리해 드립니당~~~</h1>
+  ver 오름차순<br/>
+
+  <label for="inputField">`,`로 연결된 문자열을 넣어주세용</label>
+  <input id="inputField" type="text"/>
+  <button id="sortButton">정렬!!!</button>
+
+  <div id="result"></div>
+</body>
+</html>
+
+<script>
+  //정렬 함수
+  function sortString(){
+    let beforeString = document.getElementById("inputField").value;
+    let beforeArray = beforeString.split(',');
+    beforeArray = beforeArray.map(item => parseInt(item, 10));
+    let afterArray = beforeArray.sort((a, b) => a - b);
+    let afterString = afterArray.join(', ');
+    return afterString;
+  }
+
+  //결과 출력 함수
+  function displayResult(){
+    let resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "정렬된 문자열은 ["+sortString()+"] 입니다!";
+  }
+
+  //버튼 클릭 시 이벤트 핸들러 등록
+  document.getElementById("sortButton").addEventListener("click", displayResult);
+</script>
