@@ -1,50 +1,29 @@
-from itertools import combinations
-from itertools import product
+from collections import deque
 
-def compare_score(aScores, bScores):
-    answer = 0
-    aScores.sort()
-    bScores.sort()
+def bfs(maps, x1, y1, x2, y2):
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
     
-    for a in aScores:
-        left, right = 0, len(bScores)-1
-        while left <= right:
-            mid = (left+right)//2
-            
-            if bScores[mid] < a:
-                answer+= mid - left + 1
-                left = mid+1
-            else:
-                right = mid-1
-                
-    return answer
+    
+    n, m = len(maps), len(maps[0])
+    visited = [[0 for _ in range(m)] for _ in range(n)]
+    
+    q = deque([[[x1, y1, 0]]])
+    visited[x1][y1] = 1
+    
+    while q:
+        x, y, cnt = q.popleft()
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0<=nx<n and 0<=ny<m and not visited[nx][ny]:
+            if nx==x2 and ny==y2:
+                return cnt+1
+            q.append([nx, ny, cnt+1])
+            visited[nx][ny] = 1
+    if not visited[x2][y2]:
+        return -1
+    
 
-def calc_score(dice):
-    answer = []
-    for case in product(*dice):
-        answer.append(sum(case))
-    return answer
-
-def split_dice(dice):
-    answer = []
-    n = len(dice)
-    for aDiceIdx in combinations([i for i in range(n)], n//2):
-        aDice, bDice = [], []
-        for i in range(n):
-            if i in aDiceIdx:
-                aDice.append(dice[i])
-            else:
-                bDice.append(dice[i])
-        aDiceIdx = [i+1 for i in aDiceIdx]
-        answer.append([aDiceIdx, aDice, bDice])
-    return answer
-def solution(dice):
-    aWinMax = -1
-    for aDiceIdx, aDice, bDice in split_dice(dice):
-        aScores, bScores = calc_score(aDice), calc_score(bDice)
-        aDiceIdx, result = aDiceIdx, compare_score(aScores, bScores)
-        
-        if result > aWinMax:
-            aWinMax = result
-            answer = aDiceIdx
-    return answer
+def solution(maps):
+    n, m = len(maps), len(maps[0])
+    return bfs(maps, 0, 0, n-1, m-1)
