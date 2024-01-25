@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type = "button" onClick="goCall1()">과거의 이벤트핸들러 22222</button>
+  <button type = "button" id="btnPress">현재의 이벤트핸들러 11111</button>
+</body>
+</html>
+
+<!--
+window.onload
+함수를 전달
+html문서가 모두 메모리로 로딩 된 후 여기에 전달된 함수를 호출하기도 한다
+
+화살표 함수
+this는 화살표 함수를 인식하지 못한다???
+-->
+<script>
+  window.onload = function(){
+    var btnPress = document.getElementById("btnPress");
+    
+    //함수의 매개변수로 함수를 전달
+    btnPress.addEventListener("click", () => {
+      alert("현재의 이벤트핸들러 11111");
+    });
+  }
+
+  function goCall1(){
+    alert("과거의 이벤트핸들러 22222");
+  }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type = "button" onClick="goCall1()">과거의 이벤트핸들러 22222</button>
+  <button type = "button" id="btnPress">현재의 이벤트핸들러 11111</button>
+</body>
+</html>
+
+<!--
+콜백함수(마우스 클릭) -> 함수 호출
+함수의 매개변수로 함수를 전달할 수 있다
+시스템이 지정한 함수이기 때문에 params등을 내가 변환시킬 수 없다(메뉴얼대로 작업)
+-->
+<script>
+  //시스템 내부에서 일어나는 일이기 때문에 나는 모름
+  function myFunction(x, y, callback){
+    console.log("callback start");
+
+    //callback함수
+    //2개의 params, 1개의 return
+    result = callback(x, y);
+
+    console.log("결과", result);
+    console.log("callback end");
+  }
+  //함수를 만들어서 전달하는 3가지 방식
+  function add(x, y){
+    return x+y;
+  }
+  myFunction(5, 7, add);
+  myFunction(5, 7, function(a, b){return a+b;});
+  myFunction(5,7, (a, b)=>{a+b});
+</script>

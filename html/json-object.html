@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  //주의
+  //가급적 key값에 - 안쓰는것이 좋다
+  let userInfo = {name:"김고순", age:3, address:"고순시 도치군"};
+  console.log(userInfo.name);
+  console.log(userInfo.age);
+  console.log(userInfo.address);
+
+  console.log(userInfo["name"]);
+  console.log(userInfo["age"]);
+  console.log(userInfo["address"]);
+
+  //object type vs. string type
+  let userInfo2 = '{"name":"김고순", "age":3, "address":"고순시 도치군"}'; //주의 : 여기선 key도 quote안에 있어야 한다
+  console.log(typeof userInfo);
+  console.log(typeof userInfo2);
+
+  //string to object
+  let userInfo3 = JSON.parse(userInfo2);
+  console.log(typeof userInfo3);
+</script>
