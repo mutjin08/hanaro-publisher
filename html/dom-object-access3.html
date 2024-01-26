@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  값1 :  <input type="text" name="number" id="id1"> <br/>
+  값2 :  <input type="text" name="number" id="id2"> <br/>
+  값3 :  <input type="text" name="number" id="id3"> <br/>
+  값4 :  <input type="text" name="number" id="id4"> <br/>
+  값5 :  <input type="text" name="number" id="id5"> <br/>
+  값6 :  <input type="text" name="number" id="id6"> <br/>
+  값7 :  <input type="text" name="number" id="id7"> <br/>
+  값8 :  <input type="text" name="number" id="id8"> <br/>
+  값9 :  <input type="text" name="number" id="id9"> <br/>
+  값10 : <input type="text" name="number" id="id10"> <br/>
+  <button id="btnAdd" type="button">계산하기</button>
+</body>
+</html>
+
+<script>
+  document.getElementById("btnAdd").addEventListener("click", function(){
+    let totalValue = 0;
+    for(i=1;i<=10;i++){
+      let inputValue = document.getElementById(`id${i}`).value; //주의
+      inputValue = parseInt(inputValue)||0;
+      totalValue += inputValue;
+    }
+
+    alert(`${totalValue}`);
+  })
+</script>

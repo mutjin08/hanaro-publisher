@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>DOM 객체 접근하기</h1>
+
+  <h1 id="title1">제목1</h1>
+  <h1 id="title2">제목2</h1>
+  <h1 id="title3">제목3</h1>
+  <h1 id="title4">제목4</h1>
+  <h1 id="title5">제목5</h1>
+
+  <script>
+    // title1 ~ title4까지의 텍스트 변경
+    for (let i = 1; i <= 4; i++) {
+      let title = document.getElementById(`title${i}`);
+      title.innerHTML = `css는 배열로 가져오게되네용~${i}${i}${i}`;
+    }
+
+    // 클래스명이 "title"인 요소들의 텍스트 출력
+    let titles = document.querySelectorAll(".title");
+    titles.forEach(element => {
+      console.log(element.innerHTML);
+    });
+
+    //tag로 가져와서 body태그에 별도의 스타일을 주고 싶은 경우
+    //css : 스네이크 표기법
+    //js : 카멜표기법
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#999999";
+  </script>
+</body>
+</html>
