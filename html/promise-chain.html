@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  new Promise((resolve, reject)=>{
+    //setTimeout
+    setTimeout(()=>{
+      resolve(10);
+    }, 2000);
+  })
+  .then((result)=>{
+    console.log("result", result);
+    return result+10
+  })
+  .then((result)=>{
+    console.log("result", result);
+    return result+10
+  })
+  .then((result)=>{
+    console.log("result", result);
+  })
+</script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  new Promise((resolve, reject)=>{
+    //setTimeout
+    setTimeout(()=>{
+      resolve(resolve({name:"김고순", age:23}));
+    }, 2000);
+  })
+  .then((result)=>{
+    console.log("result", result);
+    return {...result, phone:"010-0000-0000"};
+  })
+  .then((result)=>{
+    console.log("result", result);
+    return {...result, address:"서울시 관악구"};
+  })
+  .then((result)=>{
+    console.log("result", result);
+  })
+</script>

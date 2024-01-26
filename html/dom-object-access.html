@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>DOM 객체 접근하기</h1>
+
+  <h1 id="title1">제목1</h1>
+  <h1 id="title2">제목2</h1>
+  <h1 id="title3">제목3</h1>
+  <h1 id="title4">제목4</h1>
+  <h1 id="title5">제목5</h1>
+</body>
+</html>
+
+<script>
+  document.getElementById("title1").innerHTML = "고순이가 제목1을 목제1로 바꿨습니다";
+  document.getElementById("title2").innerHTML = "고순이가 제목2을 목제2로 바꿨습니다";
+  document.getElementById("title3").innerHTML = "고순이가 제목3을 목제3로 바꿨습니다";
+  document.querySelector("#title4").innerHTML = "querySelector사용하려면 #를 꼭 써주어야 합니다";
+
+  let ids = ["title1", "title2", "title3", "title4", "title5"];
+  let colors = [
+  "#ff5733", // Coral
+  "#3498db", // Dodger Blue
+  "#2ecc71", // Emerald Green
+  "#e74c3c", // Tomato Red
+  "#9b59b6"  // Amethyst Purple
+  ];
+
+  for(i=0;i<ids.length;i++){
+    document.getElementById(ids[i]).style.color = colors[i];
+  }
+
+</script>

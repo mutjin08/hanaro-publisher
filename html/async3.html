@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>async를 이용해 쉽게 비동기함수 만들기</h1>
+</body>
+</html>
+
+<script>
+  async function sigma(limit = 10){
+    if(limit<10){
+      throw "10이상의 값을 입력하세요";
+
+      //throw 예외도 던지지만 return과 동일한 역할
+      //스택을 정리하고 나온다
+      //함수만들때 오류가 발생하면 return;을 사용해라
+      //생성잦에서 객체 생성시 오류나면 return; 구문 사용 불가
+    }
+  }
+
+  async function main(){
+    let result = await sigma(10);
+    console.log(result);
+    console.log("이제 뒤에서 잘 실행되지롱~~~");
+  }
+
+  main();
+  
+</script>
