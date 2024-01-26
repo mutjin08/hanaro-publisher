@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>고순이와 함께하는 가위바위보~!</h1>
+  <image src="../image/hedgehog.jpg" height="200"></image>
+
+  <h3>~~~당신의 무기를 고르세요홍~~~</h3>
+  <button id="id0" type="button" onclick="letsCompete(0)">가위</button>
+  <button id="id1" type="button" onclick="letsCompete(1)">바위</button>
+  <button id="id2" type="button" onclick="letsCompete(2)">보</button>
+
+  <h3>~~~경기결과~~~</h3>
+  <div id="result"></div>
+</body>
+</html>
+
+<script>
+  let totalPlayed = 0;
+  let winPlayed = 0;
+  let weapon = ["가위", "바위", "보"];
+  function letsCompete(user){
+    totalPlayed += 1;
+
+    let gs = Math.floor(Math.random()*3);
+    console.log(user, gs);
+
+    if(user==gs){
+      result = `비겼어요~ 고순이가 봐준듯ㅎ`;
+    }
+    else if((user==0&&gs==2)||(user==1&&gs==0)||(user==2&&gs==1)){
+      result = `축하해요홍 당신이 이겼어요`;
+      winPlayed += 1
+    }
+    else{
+      result = `무참히 ~~~ 패배한 ~~ 당신~~~`;
+    }
+
+    document.getElementById('result').innerText = `고순이의 선택: ${weapon[gs]}\n당신의 선택: ${weapon[user]}\n결과: ${result}\n\n\n총 게임 횟수: ${totalPlayed}\n이긴 횟수: ${winPlayed}\n승률: ${winPlayed/totalPlayed}`;
+  }
+</script>

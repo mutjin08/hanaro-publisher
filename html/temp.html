@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock-Paper-Scissors Game</title>
 </head>
 <body>
-    값1 :  <input type="text" name="number" id="id1"> <br/>
-    값2 :  <input type="text" name="number" id="id2"> <br/>
-    값3 :  <input type="text" name="number" id="id3"> <br/>
-    값4 :  <input type="text" name="number" id="id4"> <br/>
-    값5 :  <input type="text" name="number" id="id5"> <br/>
-    값6 :  <input type="text" name="number" id="id6"> <br/>
-    값7 :  <input type="text" name="number" id="id7"> <br/>
-    값8 :  <input type="text" name="number" id="id8"> <br/>
-    값9 :  <input type="text" name="number" id="id9"> <br/>
-    값10 : <input type="text" name="number" id="id10"> <br/>
-    <button id="btnAdd" type="button">계산하기</button>
+  <h1>고순이와 함께하는 가위바위보~!</h1>
+  <button id="id0" type="button" onclick="playGame('가위')">가위</button>
+  <button id="id1" type="button" onclick="playGame('바위')">바위</button>
+  <button id="id2" type="button" onclick="playGame('보')">보</button>
+  <p id="result"></p>
 
-    <script>
-        document.getElementById('btnAdd').addEventListener('click', function() {
-            // Get input values
-            let values = [];
-            for (let i = 1; i <= 10; i++) {
-                let inputId = 'id' + i;
-                let inputValue = parseInt(document.getElementById(inputId).value) || 0;
-                values.push(inputValue);
-            }
+  <script>
+    function playGame(userChoice) {
+      // Generate a random choice for the computer
+      let computerChoices = ['가위', '바위', '보'];
+      let computerChoice = computerChoices[Math.floor(Math.random() * 3)];
 
-            // Calculate the sum
-            let sum = values.reduce((acc, currentValue) => acc + currentValue, 0);
+      // Determine the winner
+      let result;
+      if (userChoice === computerChoice) {
+        result = '비겼습니다!';
+      } else if (
+        (userChoice === '가위' && computerChoice === '보') ||
+        (userChoice === '바위' && computerChoice === '가위') ||
+        (userChoice === '보' && computerChoice === '바위')
+      ) {
+        result = '이겼습니다!';
+      } else {
+        result = '졌습니다!';
+      }
 
-            // Display the sum
-            alert('합계: ' + sum);
-        });
-    </script>
+      // Display the result
+      document.getElementById('result').innerText = `고순이의 선택: ${computerChoice}\n당신의 선택: ${userChoice}\n결과: ${result}`;
+    }
+  </script>
 </body>
 </html>
