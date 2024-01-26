@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<!--
+  생성자
+  한개만 만들 수 있다
+  오버로딩 없다
+  매개변수 기본값을 사용하면 다양한 생성방식을 만들 수 있다
+  이름 : 클래스명이 아니라 constructor라는 이름을 가져야 한다
+-->
+
+<script>
+  class Person{
+    name = "홍길동";
+    age = 12;
+
+    constructor(){
+      console.log("생성자 작동됨!!!");
+    }
+  }
+
+  let person1 = new Person(); //객체 생성
+  console.log(person1.name);
+  console.log(person1.age);
+</script>

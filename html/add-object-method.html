@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>객체에 메서드 추가하기</h1>
+  <p>
+    json 객체 저장방식 {key : value}
+    value에 함수주소도 저장 가능
+    멤버 key에 접근하기 위해서 this 사용
+  </p>
+</body>
+</html>
+
+<script>
+  let persons = {
+    name: "홍길동",
+    age: 23,
+    phone: "010-1234-8978",
+    setValue: function (name = "", age = 0, phone = "") {
+      this.name = name;
+      this.age = age;
+      this.phone = phone;
+    },
+    disPlay: function () {
+      console.log(`Name: ${this.name}, Age: ${this.age}, Phone: ${this.phone}`);
+    }
+  }
+
+  persons.disPlay();
+  persons.setValue("김철수", 30, "010-5678-1234");
+  persons.disPlay();
+</script>

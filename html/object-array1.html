@@ -156,7 +156,7 @@
   //거래가 내림차순 정렬해서
   //품목, 거래가 출력하기
 
-  //sol1
+  //sol1 : push
   let trade = [];
   data.forEach(item => {
     trade.push({"name":item.name, "tradePrice":item.tradePrice});
@@ -164,7 +164,7 @@
   trade.sort((a, b) => b.tradePrice - a.tradePrice);
   console.log(trade);
 
-  //sol2
+  //sol2 : map
   let trade2 = data.map(item => {
     return {"name":item.name, "tradePrice":item.tradePrice};
   })

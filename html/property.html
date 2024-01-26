@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  //상속관계 구현
+  let persons = {
+    name: "홍길동",
+    age: 23,
+    phone: "010-1234-8978",
+    setValue: function (name = "", age = 0, phone = "") {
+      this.name = name;
+      this.age = age;
+      this.phone = phone;
+    },
+    display: function () {
+      console.log(`Name: ${this.name}, Age: ${this.age}, Phone: ${this.phone}`);
+    }
+  }
+
+  let students = {__proto__:persons, "kor":90, "eng":80, "mat":70};
+  students.display();
+  console.log(students);
+  console.log(students.kor, students.eng, students.mat);
+</script>

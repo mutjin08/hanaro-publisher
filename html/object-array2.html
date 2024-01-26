@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+let board = {
+  totalCnt: "15",
+  pg: 2,
+  boardList: [
+    { id: 1, title: "제목1", writer: "홍길동", contents: "내용1", wdatd: "2024-01-26" },
+    { id: 2, title: "제목2", writer: "이몽룡", contents: "내용2", wdatd: "2024-01-27" },
+    { id: 3, title: "제목3", writer: "성춘향", contents: "내용3", wdatd: "2024-01-28" },
+    { id: 4, title: "제목4", writer: "임꺽정", contents: "내용4", wdatd: "2024-01-29" },
+    { id: 5, title: "제목5", writer: "김철수", contents: "내용5", wdatd: "2024-01-30" },
+    { id: 6, title: "제목6", writer: "이영희", contents: "내용6", wdatd: "2024-01-31" },
+    { id: 7, title: "제목7", writer: "박민수", contents: "내용7", wdatd: "2024-02-01" },
+    { id: 8, title: "제목8", writer: "최영희", contents: "내용8", wdatd: "2024-02-02" },
+    { id: 9, title: "제목9", writer: "강철수", contents: "내용9", wdatd: "2024-02-03" },
+    { id: 10, title: "제목10", writer: "한영희", contents: "내용10", wdatd: "2024-02-04" },
+  ]
+};
+
+console.log(board.totalCnt);
+console.log(board.pg);
+
+console.log("데이터 출력하기");
+board.boardList.forEach(item => {
+  console.log(item);
+})
+
+//api문서 만들기 쉽게 도와주는 프로그램 : swagger
+</script>
