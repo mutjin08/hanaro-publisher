@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  limit = 100;
+
+  new Promise((resolve, reject) => {
+    i = 1;
+    s = 0;
+
+    if(limit < 100){
+      reject("100보다 큰 값을 넣으세요");
+    }
+    for(i=1;i<limit;i++){
+      s += i;
+    }
+
+    resolve(s); 
+    //resolve에서 보낸 결과값을 받아서 
+    //then에서 전달하는 함수의 매개변수에 전달된다
+  })
+  .then(res => {console.log("합계: ", res)})
+  .catch(msg => {console.log(msg)});
+</script>

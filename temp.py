@@ -16,11 +16,14 @@ def solution(coin, cards):
     n = len(cards)
     haves = cards[:n//3]
     cards = cards[n//3:]
+    picks = []
     stage = 1
     
     while True:
         if len(cards)<2:
             return stage
+        picks+=cards[:2]
+        cards = cards[2:]
         
         #1
         i, j = oneArray(haves, n+1)
@@ -31,23 +34,19 @@ def solution(coin, cards):
             
         #2-1
         if coin>=1:
-            i, j = twoArray(haves, cards, n+1)
+            i, j = twoArray(haves, picks, n+1)
             if i!=-1 and j!=-1:
                 haves = haves[:i]+haves[i+1:]
-                if j<=1:
-                  cards = cards[2:]
-                elif j>=2:
-                  cards = cards[:j]+cards[j+1:]
-                  cards = cards[2:]
+                picks = picks[:j]+picks[j+1:]
                 coin -=1
                 stage += 1
                 continue
                 
         #3
         if coin>=2:
-            i, j = oneArray(cards, n+1)
+            i, j = oneArray(picks, n+1)
             if i!=-1 and j!=-1:
-                cards = cards[:i]+cards[i+1:j]+cards[j+1:]
+                picks = picks[:i]+picks[i+1:j]+picks[j+1:]
                 coin-=2
                 stage += 1
                 continue
