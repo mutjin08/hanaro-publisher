@@ -7,31 +7,40 @@
 </head>
 <body>
   
+  <fieldset>주급계산기</fieldset>
+
+  <label for="nameId">이름</label>
+  <input id="nameId" type="text"/>
+  <br/>
+
+  <label for="moneyId">시급</label>
+  <input id="moneyId" type="number"/>
+  <br/>
+
+  <label for="timeId">근무시간</label>
+  <input id="timeId" type="number"/>
+  <br/>
+
+  <button id="btnId" type="button">확인</button>
+  <br/>
+
+  <div id="resultId"></div>
+
+  <script>
+    window.onload = function(){
+      document.getElementById("btnId").addEventListener("click", ()=>{
+        // 수정: 변수명 오탈자 수정
+        let userName = document.getElementById("nameId").value;
+        let userMoney = document.getElementById("moneyId").value;
+        let userTime = document.getElementById("timeId").value;
+
+        // 수정: 변수명 오탈자 및 문자열 템플릿 수정
+        let userResult = `${userName}님의 주급은 ${userMoney * userTime}입니다`;
+
+        document.getElementById("resultId").innerHTML = userResult;
+      })
+    }
+  </script>
+
 </body>
 </html>
-<script>
-  let scores = [
-      {"id":1, "name":"김성훈", "kor":90, "eng":80, "mat":60},
-      {"id":2, "name":"이민호", "kor":100, "eng":100, "mat":95},
-      {"id":3, "name":"김경하", "kor":80, "eng":80, "mat":60},
-      {"id":4, "name":"전미화", "kor":70, "eng":90, "mat":60},
-      {"id":5, "name":"김정하", "kor":80, "eng":70, "mat":80},
-      {"id":6, "name":"강수지", "kor":60, "eng":50, "mat":30},
-      {"id":7, "name":"한승원", "kor":50, "eng":50, "mat":40},
-      {"id":8, "name":"홍정훈", "kor":90, "eng":70, "mat":60},
-      {"id":9, "name":"백운용", "kor":95, "eng":80, "mat":70},
-      {"id":10, "name":"최주용", "kor":90, "eng":90, "mat":90},
-  ];
-
-  scores.forEach(student => {
-    student["tot"] = student.kor+student.eng+student.mat;
-    student["avg"] = student["tot"]/3;
-    console.log(student["tot"], student["avg"]);
-  });
-
-  //국어 성적이 80점 이상인 학생의 숫자
-  console.log(scores.filter(student => student.kor>=80).length);
-
-  //평균이 80점 이상인 학생 리스트
-  console.log(scores.filter(student => student.avg>=80));
-</script>

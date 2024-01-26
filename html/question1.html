@@ -6,43 +6,28 @@
   <title>Document</title>
 </head>
 <body>
-  
+
+  <input type="text" id="input" placeholder="Enter numbers separated by commas">
+  <button id="btnSort">Sort</button>
+  <div id="result"></div>
+
+  <script>
+    window.onload = function(){
+      let btnSort = document.getElementById("btnSort");
+      btnSort.addEventListener("click", ()=>{
+        let input = document.getElementById("input").value;
+
+        let temps = input.split(",");
+        temps = temps.map(item => parseInt(item));
+
+        let result = temps.sort((a, b) => a - b);
+
+        console.log(result);
+        // result = result.join(","); // 배열을 주면 문자열로 바꾸는 기능도 있다
+
+        document.getElementById("result").innerHTML = result;
+      })
+    }
+  </script>
 </body>
 </html>
-
-<!--
-30대 이상의 사람들 목록만 추출하기
-30대 이상인 사람들은 모두 몇명이었는가?
-성이 홍씨인 사람들 목록만 추출하기
-성이 홍씨인 사람들의 나이의 함 구하기
--->
-
-<script>
-  let persons = [
-    {"name":"홍고순","age":30},
-    {"name":"이꼬순","age":80},
-    {"name":"홍도순","age":70},
-    {"name":"박바늘","age":10},
-    {"name":"홍마늘","age":20},
-    {"name":"강비늘","age":40},
-  ]
-
-  //30대 이상의 사람들 목록만 추출하기
-  let search1 = persons.filter(person => person.age>=30);
-  console.log(search1)
-
-  //30대 이상인 사람들은 모두 몇명이었는가?
-  console.log(search1.length);
-
-  //성이 홍씨인 사람들 목록만 추출하기
-  let search2 = persons.filter(person => person.name.startsWith("홍"));
-  //let search2 = persons.filter(person => person.name[0]=="홍");
-  console.log(search2);
-
-  //성이 홍씨인 사람들의 나이의 합 구하기
-  //중간연산 : 반환값이 객체배열
-  //최종연산 : 반환값이 없다 (예:forEach)
-  let search3 = search2.reduce((sum, person) => sum+person.age, 0);
-  console.log(search3);
-
-</script>

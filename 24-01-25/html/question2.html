@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  let scores = [
+      {"id":1, "name":"김성훈", "kor":90, "eng":80, "mat":60},
+      {"id":2, "name":"이민호", "kor":100, "eng":100, "mat":95},
+      {"id":3, "name":"김경하", "kor":80, "eng":80, "mat":60},
+      {"id":4, "name":"전미화", "kor":70, "eng":90, "mat":60},
+      {"id":5, "name":"김정하", "kor":80, "eng":70, "mat":80},
+      {"id":6, "name":"강수지", "kor":60, "eng":50, "mat":30},
+      {"id":7, "name":"한승원", "kor":50, "eng":50, "mat":40},
+      {"id":8, "name":"홍정훈", "kor":90, "eng":70, "mat":60},
+      {"id":9, "name":"백운용", "kor":95, "eng":80, "mat":70},
+      {"id":10, "name":"최주용", "kor":90, "eng":90, "mat":90},
+  ];
+
+  scores.forEach(student => {
+    student["tot"] = student.kor+student.eng+student.mat;
+    student["avg"] = student["tot"]/3;
+    console.log(student["tot"], student["avg"]);
+  });
+
+  //국어 성적이 80점 이상인 학생의 숫자
+  console.log(scores.filter(student => student.kor>=80).length);
+
+  //평균이 80점 이상인 학생 리스트
+  console.log(scores.filter(student => student.avg>=80));
+</script>
