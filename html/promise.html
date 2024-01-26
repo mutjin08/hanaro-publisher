@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  let promise = new Promise(function(resolve, reject){
+
+    //특정 시간(1초)이 지나면 함수가 호출된다
+    setTimeout(()=>{resolve(999);}, 1000);
+  })
+
+  console.log(promise);
+
+  //promise.then() //resolve가 호출될 때 보내는 value를 매개변수로 가져오는 함수
+  //.catch() //reject가 호출될 때 보내는 error메시지를 매개변수로 가져오는 함수
+  //.finally() //마무리 하고 싶을 때
+
+  promise.then(
+    value => console.log(value)
+  ).catch(
+    error => console.log(error)
+  ).finally(
+    () => console.log("~~~ending~~~")
+  );
+
+  //promise 실행에 시간이 걸리기 때문에 이것 먼저 출력된다
+  console.log("complete!!!!!");
+</script>
