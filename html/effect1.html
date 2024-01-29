@@ -15,7 +15,11 @@
 <script>
   $(()=>{
     $("#btnShow").click(()=>{
-      $("#result").toggle();
+      //$("#result").toggle(3000);
+      //$("#result").toggle("slow");
+      $("#result").hide(3000, function(){
+        $("#result").show(3000);
+      });
     })
   })
 </script>

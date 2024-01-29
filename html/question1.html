@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>근무시간</th>
+        <th>시급</th>
+        <th>주급</th>
+      </tr>
+    </thead>
+
+    <tbody id="tbody"></tbody>
+  </table>
+</body>
+</html>
+
+<script>
+  window.onload = load;
+
+  let data= [
+    {"name": "홍길동", "time": 40, "rate": 10000},
+    {"name": "임꺽정", "time": 30, "rate": 20000},
+    {"name": "장길산", "time": 20, "rate": 20000},
+    {"name": "김미영", "time": 15, "rate": 30000}
+  ]
+
+  function load(){
+    for (i=0;i<data.length;i++){
+      let row = tbody.insertRow(tbody.rows.length);
+      let cell0 = row.insertCell(0);
+      let cell1 = row.insertCell(1);
+      let cell2 = row.insertCell(2);
+      let cell3 = row.insertCell(3);
+
+      cell0.innerHTML = data[i].name;
+      cell1.innerHTML = data[i].time;
+      cell2.innerHTML = data[i].rate;
+
+      let total = data[i].time * data[i].rate;
+      if(data[i].time > 20){
+        total *= 1.5;
+      }
+      cell3.innerHTML = total;
+    }
+  }
+</script>
