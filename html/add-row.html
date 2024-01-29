@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <table>
+
+    <thead>
+      <tr>
+        <th>품목</th>
+        <th>수량</th>
+        <th>단가</th>
+      </tr>
+    </thead>
+
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <script>
+    window.onload = load;
+
+    let data = [
+      { name: "밀웜", cnt: 10, unit: "4000" },
+      { name: "맛좋은사료", cnt: 5, unit: "3500" },
+      { name: "노맛사료", cnt: 120, unit: "2000" },
+      { name: "쳇바퀴", cnt: 3, unit: "17000" },
+      { name: "배변패드", cnt: 200, unit: "2000" },
+    ];
+
+    function load() {
+      let tbody = document.getElementById("tbody");
+
+      for (let i = 0; i < data.length; i++) {
+        let row = tbody.insertRow(tbody.rows.length);
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+
+        cell1.innerHTML = data[i].name;
+        cell2.innerHTML = data[i].cnt;
+        cell3.innerHTML = data[i].unit;
+      }
+    }
+  </script>
+</body>
+</html>

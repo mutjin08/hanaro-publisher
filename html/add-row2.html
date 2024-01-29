@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btnAdd">행 추가</button>
+  <button id="btnDel">행 삭제</button>
+  
+  <table>
+    <thead>
+      <th>품목</th>
+      <th>수량</th>
+      <th>단가</th>
+    </thead>
+
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <script>
+    window.onload = () => {
+      document.getElementById("btnAdd").addEventListener("click", () => {
+        let tbody = document.getElementById("tbody");
+        let row = tbody.insertRow(tbody.rows.length);
+
+        let cell1 = row.insertCell(0);
+        cell1.innerHTML = '<input type="text" name="name">';
+        let cell2 = row.insertCell(1);  // 수정: 다른 열에 추가
+        cell2.innerHTML = '<input type="text" name="quantity">';
+        let cell3 = row.insertCell(2);  // 수정: 다른 열에 추가
+        cell3.innerHTML = '<input type="text" name="price">';
+      })
+
+      document.getElementById("btnDel").addEventListener("click", () => {
+        let tbody = document.getElementById("tbody");
+        if (tbody.rows.length > 0) {
+          tbody.deleteRow(tbody.rows.length - 1);
+        }
+      })
+    }
+  </script>
+</body>
+</html>

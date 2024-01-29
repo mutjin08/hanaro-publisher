@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" name="" id="" onkeydown="keyDown(event)" onkeypress="keyPress(event)" onkeyup="keyUp(event)"/>
+</body>
+</html>
+
+<script>
+  function keyDown(){
+    //event 객체
+    //발생한 event에 대한 정보
+    //시스템이 기본적으로 제공하는 것이다
+    console.log(`${event} key down!!!`);
+  }
+  function keyPress(){
+    console.log(`${event} key press!!!`);
+  }
+  function keyUp(){
+    
+
+    let s = document.getElementsByTagName("input")[0];
+    s.value = s.value.toUpperCase();
+    console.log(event);
+    console.log(`${event} key up!!!`);
+  }
+</script>

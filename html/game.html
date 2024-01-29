@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>고순이와 함께하는 가위바위보 시즌2</h1>
+  
+  <h3>~~~당신의 무기를 고르쎄용~~~</h3>
+  <button id="id0" type="button" onClick="letsCompete(0)">가위</button>
+  <button id="id1" type="button" onClick="letsCompete(1)">바위</button>
+  <button id="id2" type="button" onClick="letsCompete(2)">보</button>
+
+  <h3>~~~경기결과~~~</h3>
+  <div id="result"></div>
+  
+</body>
+</html>
+
+<script>
+  let weapon = ["가위", "바위", "보"];
+  function letsCompete(user){
+    let gs = Math.floor(Math.random()*3);
+    console.log(user, gs);
+
+    document.getElementById("result").innerText = `user:${weapon[user]}   gosoon:${weapon[gs]}`;
+  }
+</script>
