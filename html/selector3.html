@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>헤더1</h1>
+  <h2>헤더2</h2>
+
+  <p>셀렉터1</p>
+  <p>셀렉터2</p>
+  <p>셀렉터3</p>
+  <p>셀렉터4</p>
+  <p>셀렉터5</p>
+  <p>셀렉터6</p>
+  <p>셀렉터7</p>
+  <p>셀렉터8</p>
+  <p>셀렉터9</p>
+
+  <button id="btnAll" type = "button">전체선택</button>
+  <button id="btnFirst" type = "button">첫번째 선택</button>
+</body>
+</html>
+
+<script>
+  $(() => {
+    $("#btnAll").click(() => {
+      $("*").css("color", "#ff4444");
+      //$(this).css("color", "#ff4444");
+    });
+
+    $("#btnFirst").click(()=>{
+      console.log("click");
+      $("p:first").css("background-color", "#ff00ff")
+    })
+
+    
+  });
+</script>

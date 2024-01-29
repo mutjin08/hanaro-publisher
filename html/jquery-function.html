@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<body>
+  X : <input id="x" type="text" name=""/><br/>
+  Y : <input id="y" type="text" name=""/><br/>
+
+  <button id="btnAdd" type="button">+</button>
+
+  <!-- Add a paragraph to display the result -->
+  <div id="result"></div>
+</body>
+</html>
+
+<script>
+  $(document).ready(()=>{
+    $("#btnAdd").click(()=>{
+      // Calculate the sum
+      let result = parseInt($("#x").val()) + parseInt($("#y").val());
+      
+      // Display the result in the "result" paragraph
+      $("#result").text("Result: " + result);
+      
+      // You can also log the result to the console if needed
+      //console.log(result);
+    });
+  });
+</script>

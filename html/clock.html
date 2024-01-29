@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1 id="currentTime">Current Time</h1>
+  <button id="btnStart">Start Timer</button>
+  <button id="btnStop">Stop Timer</button>
+
+  <script>
+    let timer1 = null; // 변수를 직접 초기화하고자 할 때 null 값으로 설정
+
+    window.onload = () => {
+      document.getElementById("btnStart").addEventListener("click", startTimer);
+      document.getElementById("btnStop").addEventListener("click", stopTimer);
+    
+
+    function startTimer() {
+      timer1 = setInterval(() => {
+        let today = new Date();
+        today = today.toLocaleTimeString(); // 현재 시간만 가져온다
+        document.getElementById("currentTime").innerHTML = today;
+      }, 1000); // 1초 간격으로 업데이트
+    }
+
+    function stopTimer() {
+      if (timer1 !== null) {
+        clearInterval(timer1);
+        timer1 = null;
+      }
+    }
+
+  }
+  </script>
+</body>
+</html>

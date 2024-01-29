@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>쿼리셀렉터</h1>
+  <p>쿼리셀렉터 p태그</p>
+  <p>쿼리셀렉터 p태그</p>
+  <p>쿼리셀렉터 p태그</p>
+
+  <button id="btnPress1" type="button">p태그에 색상 부여하기</button>
+</body>
+</html>
+
+<script>
+  window.onload = () => {
+    //id의 경우 반드시 #을 써 주어야 한다
+    document.querySelector("#btnPress1").addEventListener("click", () => {
+      document.querySelector("p").style.color = "#ff0000";
+      document.querySelectorAll("p")[0].style.color = "#ffffff";
+
+      //첫번째것 하나만 단수로 들고온다
+      let p1 = document.querySelector("p");
+      //배열(nodelist)로 들고온다
+      let p2 = document.querySelectorAll("p")[0];
+      
+      console.log(p1, p2, p3);
+
+      let p3 = document.getElementsByTagName("p");
+      //getElementByTagName : for-each 구문을 사용하지 못한다
+      p3.forEach((node)=>{
+        node.style.color = "cyan";
+      })
+      console.log(p3);
+    })
+  }
+</script>
