@@ -45,7 +45,7 @@
 
       let total = data[i].time * data[i].rate;
       if(data[i].time > 20){
-        total *= 1.5;
+        total = (data[i].time-20) * data[i].rate * 1.5 + 20 * data[i].rate;
       }
       cell3.innerHTML = total;
     }
