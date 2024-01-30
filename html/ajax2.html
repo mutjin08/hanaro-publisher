@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax</title>
+</head>
+<body>
+  <h1>Ajax html</h1>
+  <div id="result" style="border: 1px solid red; width: 400px; height: 200px;"></div>
+  <button type="button" id="btnSend">비동기 호출</button>
+</body>
+</html>
+
+<script>
+  //fetch함수가 주는 결과 : promise 객체
+  //promise가 일을 종료할 때까지 기다린다 (then 구문)
+  document.querySelector("#btnSend").addEventListener("click", () => {
+    fetch("http://127.0.0.1:8080/hello/getUserInfo")
+      .then((res)=>{
+        console.log(res); //response 객체로 전달받는다. 
+        return res.json(); //data만 다음 then 구문으로 전달된다
+      })
+      .then((data)=>{
+        console.log(typeof(data));
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
+  });
+</script>

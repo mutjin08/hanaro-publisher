@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax</title>
+</head>
+<body>
+  <h1>Ajax html</h1>
+  <div id="result" style="border: 1px solid red; width: 400px; height: 200px;"></div>
+  <input type="text" id="xvalue" placeholder="Enter x value">
+  <input type="text" id="yvalue" placeholder="Enter y value">
+  <button type="button" id="btnSend">비동기 호출</button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    document.querySelector("#btnSend").addEventListener("click", () => {
+      $.ajax({
+        url: "http://127.0.0.1:8080/hello/getUserInfo",
+        method: "GET",
+        data: { x: $("#xvalue").val(), y: $("#yvalue").val() }
+      })
+      .done((res) => {
+        console.log(res);
+        $("#result").html(JSON.stringify(res));
+      })
+      .fail((xhr, textStatus, errorThrown) => {
+        console.log(textStatus, errorThrown);
+      });
+    });
+  </script>
+</body>
+</html>
