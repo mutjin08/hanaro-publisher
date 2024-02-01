@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div>
+      <h2>GET Response:</h2>
+      <p id="getOutput"></p>
+  </div>
+
+  <div>
+      <h2>POST Response:</h2>
+      <p id="postOutput"></p>
+  </div>
+</body>
+</html>
+
+<script>
+  // GET 요청 예시
+  axios.get('http://localhost:8080/api/hello')
+      .then(response => {
+          console.log(response.data);
+          document.getElementById('getOutput').innerText = response.data;
+      })
+      .catch(error => {
+          console.error(error);
+      });
+
+  // POST 요청 예시
+  const postData = {
+      message: 'Hello from Axios!'
+  };
+
+  axios.post('http://localhost:8080/api/postExample', postData)
+      .then(response => {
+          console.log(response.data);
+          document.getElementById('postOutput').innerText = response.data;
+      })
+      .catch(error => {
+          console.error(error);
+      });
+</script>
