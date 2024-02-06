@@ -43,3 +43,16 @@ regexp = new RegExp(/^like$/i); //패턴객체 생성
 console.log(s1, regexp.exec(s1)); //true
 console.log(s2, regexp.exec(s2)); //true
 console.log(s3, regexp.exec(s3)); //true
+
+s = `
+I like star
+red star
+blue star
+I like star
+I like cat
+I like dog
+My dog is pretty
+I love my dog
+`
+
+console.log(s)
