@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="myform" action="">
+    per_hour : <input id="" name="per_hour" type="text"/><br/>
+    total_time : <input id="" name="total_time" type="text"/><br/>
+
+    <button id="btnAdd" type="button">더하기</button>
+  </form>
+</body>
+</html>
+
+<script>
+  window.onload = () => {
+    document.getElementById("btnAdd").addEventListener("click", ()=>{
+      let frm = document.getElementById("myform");
+      frm.action = "/weekpay_result";
+      frm.method = "GET";
+      frm.submit();
+    })
+  }
+</script>
