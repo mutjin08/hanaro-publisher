@@ -9,6 +9,13 @@
   <form id="myform" action="">
     x : <input type="text" name="x" id=""/> <br/> 
     y : <input type="text" name="y" id=""/> <br/> 
+
+    <select name="operator">
+      <option value="1">더하기</option>
+      <option value="2">빼기</option>
+      <option value="3">곱하기</option>
+      <option value="4">나누기</option>
+    </select>
     <button type="button" id="btnAdd">더하기</button>
   </form>
 </body>
@@ -17,7 +24,6 @@
 <script>
   window.onload = () => {
     document.getElementById("btnAdd").addEventListener("click", ()=>{
-      
       //let frm = document.forms[0]; //폼태그 이름, 아이디 없는 경우
       //let frm = document.myform;
       let frm = document.getElementById("myform"); //무적(버전 상관없이 가능)

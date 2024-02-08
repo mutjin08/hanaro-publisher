@@ -2,11 +2,12 @@ import http from 'http';
 import fs from 'fs';
 import ejs from 'ejs'; //npm install ejs
 import url from 'url';
+import path from 'path';
 
 //함수 맵을 만들자 
 //일일이 if문 사용말고 for문써서 해당 url이 오면 함수를 호출하자 
 const pathMap=[
-    {"path":"/",     "func":index},  
+    {"path":"/", "func":index},  
     {"path":"/test", "func":test},
     {"path":"/add", "func":add}, //입력창으로 이동
     {"path":"/add_result", "func":add_result}, //입력처리, db에 넣기
@@ -104,4 +105,35 @@ function add(request, response){
 }
 
 function add_result(request, response){
+  //get방식 parsing
+  //form tag를 타고 input tag의 name속성이
+  //add_result?x=5&y=8
+
+  let params = url.parse(request.url, true).query; //JSON 형태로 저장
+  console.log(params);
+
+  fs.readFile(path.resolve() + "/html/add_result.html", "utf-8", (error, data)=>{
+    if(error){
+      console.log("파일을 찾을 수 없습니다");
+      return;
+    }
+
+    if(params.operator=="1"){
+      add_result = parseInt(params.x) + parseInt(params.y);
+    }
+    else if(params.operator=="2"){
+      add_result = parseInt(params.x) - parseInt(params.y);
+    }
+    else if(params.operator=="3"){
+      add_result = parseInt(params.x) * parseInt(params.y);
+    }
+    else{
+      add_result = parseInt(params.x) / parseInt(params.y);
+    }
+
+    //{params:{x:5, y:7, result:12} ==> {...params}}
+    let result = ejs.render(data, {...params, "result":add_result});
+    response.writeHead(200, {"Content-Type":"text/html; charset=utf-8"});
+    response.end(result);
+  })
 }
