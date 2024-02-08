@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+  window.onload = () => {
+  axios.get('/weekpay_proc', {
+    params: {
+      "name" : document.querySelector("#name").value,
+      "work_time" : document.querySelector("#work_time").value,
+      "week_pay" : document.querySelector("#week_pay").value,
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .finally(function () {
+  // always executed
+  });
+  }
+</script>
