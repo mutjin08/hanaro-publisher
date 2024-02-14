@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>ajax 기술로 파일을 전송한다</h1>
+  <form id="myform" name="myform" method="post" enctype="multipart/form-data" action="/filesave1">
+    comment : <input type="text" name="comment" id="comment"><br/>
+    file : <input type="file" name="file" id="file"><br/>
+    file : <input type="file" name="file" id="file"><br/>
+    file : <input type="file" name="file" id="file"><br/>
+    <button id="btnSend">전송</button>
+  </form>
+</body>
+</html>
+
+<script>
+  window.onload = () => {
+    document.querySelector("#btnSend").addEventListener("click", ()=>{
+      //FormData(폼 객체) => 파일로 전송하기 위한 formData 개체를 만들어야 한다
+      //document.myform; //name 속성일 때
+      //document.forms[0] //문서에 <form></form> 태그를 여러번 쓸 경우 각 폼 객체 관리용 배열이 존재한다. document.forms 배열에 폼 객체 정보가 저장되어 있다
+      //jquery로 접근할 때는 ${"#myForm"}[0];
+      let formData = new FormData(document.getElementById("myform"));
+      console.log(formData);
+      
+      for(key of formData.keys()){
+        console.log(key, formData.get(key));
+      }
+
+      axios({
+        url:"/filesave2",
+        method:"POST",
+        data:fromData,
+        headers:{
+          "Content-Type":"multipart/form-data"
+        }
+        .then((res)=>{
+          alert(res.data.result);
+        })
+        .catch((error)=>{
+          alert(error);
+        })
+      })
+    });
+  }
+
+
+</script>
+

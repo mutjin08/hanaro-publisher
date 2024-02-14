@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1><%=title%></h1>
+  <h1><%=contents%></h1>
+
+  <h3>꽃</h3>
+  <ul>
+    <% for(item of flowers){ %>
+      <li><%=item%></li>
+    <% } %>
+  </ul>
+
+  <ul>
+    <h1><a href="/filesend1">파일 한 개 업로드 테스트</a></h1>
+    <h1><a href="/filesend2">파일 여러 개 업로드 테스트</a></h1>
+    <h1><a href="/filesend3">ajax로 파일 업로드하기</a></h1>
+  </ul>                                 
+</body>
+</html>
